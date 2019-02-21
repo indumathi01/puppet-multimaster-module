@@ -1,0 +1,1 @@
+# puppet-multimaster-module
