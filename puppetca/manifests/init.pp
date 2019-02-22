@@ -14,8 +14,8 @@ class puppetca (
   $config         = {},
 
   $value          = '"-Xms512m -Xmx512m -Djruby.logger.class=com.puppetlabs.jruby_utils.jruby.Slf4jLogger"',
-  $ca_server      = 'puppetmulti.zippyops.com',
-  $server         = 'puppetmulti.zippyops.com',
+  $ca_server      = 'puppetca.zippyops.com',
+  $server         = 'puppetca.zippyops.com',
 
 ) {
  
