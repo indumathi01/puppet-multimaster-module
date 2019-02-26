@@ -2,6 +2,10 @@ package { 'puppetserver':
     name   => puppetserver,
     ensure => present,
   }
+  package { 'puppetdb-termini':
+    name   => puppetdb-termini,
+    ensure => present,
+  }
 file { '/etc/puppetlabs/puppet':
     ensure  => directory,
     mode    => '0644',
