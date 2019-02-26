@@ -1,42 +1,18 @@
-node /puppetdb1.zippyops.com/ {
+#  puppetdb configuration using puppet 
 notify { "this is server $servername" : }
-#class { 'puppetdb' : }
-
-
-#class { 'puppetboard': 
-#   manage_virtualenv => true,
-# }
-
-#class { 'apache':
-#  purge_configs => false,
-#  mpm_module    => 'prefork',
-#  default_vhost => true,
-#  default_mods  => false,
-#}
-
-#class { 'apache::mod::wsgi': }
-
-# Configure Puppetboard
-#class { 'puppetboard': }
-
-# Access Puppetboard from example.com/puppetboard
-#class { 'puppetboard::apache::conf': }
-#}
-
-# Configure Apache on this server
+#class { 'puppetdb': }
 class { 'apache': }
 class { 'apache::mod::wsgi': }
 
 # Configure Puppetboard
-class { 'puppetboard': }
+class { 'puppetboard':
+  manage_git        => true,
+  manage_virtualenv => true,
+}
+
 
 # Access Puppetboard through pboard.example.com
 class { 'puppetboard::apache::vhost':
-  vhost_name => 'puppetdb1.zippyops.com',
+  vhost_name => 'puppetdb.zippyops.com',
   port       => 8888,
-}
-}
-
-node /puppetagent.zippyops.com/ {
-notify { "this is server $servername" : }
 }
