@@ -41,9 +41,9 @@ class puppetca::config (
                 owner   => 'puppet',
                 group   => 'puppet',
                 }
-        service { 'puppetserver':
-                 name   => 'puppetserver',
-                 ensure => 'true',
-                 enable => 'true',
-                }
+  #      service { 'puppetserver':
+  #               name   => 'puppetserver',
+  #               ensure => 'true',
+  #               enable => 'true',
+  #              }
 }
